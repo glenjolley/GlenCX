@@ -1,0 +1,29 @@
+---
+import "../styles/global.css";
+const { title, description } = Astro.props;
+---
+
+<html lang="en" class="bg-horizon-950">
+    <head>
+        <meta charset="utf-8" />
+        <title>{title}</title>
+        <link rel="stylesheet" href="/styles/global.css" />
+    </head>
+    <body>
+        <!-- <header>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </header> -->
+
+        <main>
+            <slot />
+        </main>
+
+        <footer class="text-center">
+            <p>© {new Date().getFullYear()} Glen Jolley</p>
+        </footer>
+
+    </body>

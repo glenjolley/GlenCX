@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+    --color-horizon-50: #f1f8fa;
+    --color-horizon-100: #dcedf1;
+    --color-horizon-200: #bcdbe5;
+    --color-horizon-300: #8ec1d2;
+    --color-horizon-400: #599eb7;
+    --color-horizon-500: #3f86a2;
+    --color-horizon-600: #356a85;
+    --color-horizon-700: #31586d;
+    --color-horizon-800: #2f4b5b;
+    --color-horizon-900: #2b404e;
+    --color-horizon-950: #182834;
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl md:text-5xl font-bold mb-4 text-white;
+  }
+
+  p {
+    @apply text-lg text-horizon-50 mb-6 max-w-2xl mx-auto;
+  }
+
+  section > p {
+    @apply px-8;
+  }
+
+  h2 {
+    @apply text-3xl font-bold mb-6 text-horizon-200;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.cursor-effect {
+    display: inline-block;
+    font-weight: 300;
+    color: #fff;
+    animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
