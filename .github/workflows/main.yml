@@ -26,5 +26,4 @@ jobs:
 
       - name: Deploy via SSH
         run: |
-          mkdir -p /home/NovaXeros/web/glen.cx/public_html
           rsync -avz --delete ./dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/NovaXeros/web/glen.cx/public_html/
