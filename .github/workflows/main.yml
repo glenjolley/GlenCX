@@ -31,8 +31,9 @@ jobs:
           server: ${{ secrets.SERVER_HOST }}
           port: 2222
           username: ${{ secrets.SERVER_USER }}
-          privateKey: ${{ secrets.DEPLOY_KEY }}
+          protocol: sftp
+          security: ssh-key
+          key: ${{ secrets.DEPLOY_KEY }}
           local-dir: ./dist/
           server-dir: /home/${{ secrets.SERVER_USER }}/web/glen.cx/public_html/
-          protocol: sftp
           dangerous-clean-slate: true
