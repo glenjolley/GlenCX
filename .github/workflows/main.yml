@@ -25,14 +25,6 @@ jobs:
         run: npm run build
 
       - name: Deploy via SSH
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.DEPLOY_KEY }}
-          port: 2222
-          sync: |
-            local: dist/
-            remote: /home/user/web/glen.cx/public_html/
-            delete: true
-      
+        run: |
+          mkdir -p /home/NovaXeros/web/glen.cx/public_html
+          rsync -avz --delete ./dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/NovaXeros/web/glen.cx/public_html/
