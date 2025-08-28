@@ -35,3 +35,4 @@ jobs:
           local_path: ./dist/*
           remote_path: /home/${{ secrets.SERVER_USER }}/web/glen.cx/public_html/
           delete_remote_files: true
+          sftp_only: true
