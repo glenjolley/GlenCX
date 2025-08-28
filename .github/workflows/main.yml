@@ -31,7 +31,8 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.DEPLOY_KEY }}
           port: 2222
-          source: "dist/"
-          target: "/home/user/web/glen.cx/public_html/"
-          rm: true
+          sync: |
+            local: dist/
+            remote: /home/user/web/glen.cx/public_html/
+            delete: true
       
