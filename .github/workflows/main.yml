@@ -26,13 +26,13 @@ jobs:
         run: npm run build
 
       - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          username: ${{ secrets.SERVER_USER }}
           server: ${{ secrets.SERVER_HOST }}
           port: 2222
-          ssh_private_key: ${{ secrets.DEPLOY_KEY }}
-          local_path: ./dist/*
-          remote_path: /home/${{ secrets.SERVER_USER }}/web/glen.cx/public_html/
-          delete_remote_files: true
-          sftp_only: true
+          username: ${{ secrets.SERVER_USER }}
+          privateKey: ${{ secrets.DEPLOY_KEY }}
+          local-dir: ./dist/
+          server-dir: /home/${{ secrets.SERVER_USER }}/web/glen.cx/public_html/
+          protocol: sftp
+          dangerous-clean-slate: true
