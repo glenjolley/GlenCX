@@ -26,14 +26,12 @@ jobs:
         run: npm run build
 
       - name: Deploy via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
         with:
-          server: ${{ secrets.SERVER_HOST }}
-          port: 2222
           username: ${{ secrets.SERVER_USER }}
-          protocol: sftp
-          security: ssh-key
-          key: ${{ secrets.DEPLOY_KEY }}
-          local-dir: ./dist/
-          server-dir: /home/${{ secrets.SERVER_USER }}/web/glen.cx/public_html/
-          dangerous-clean-slate: true
+          server: ${{ secrets.SERVER_HOST }}
+          ssh_private_key: ${{ secrets.DEPLOY_KEY }}
+          port: 2222
+          local_path: './dist/*'
+          remote_path: /home/${{ secrets.SERVER_USER }}/web/glen.cx/public_html/
+          sftp_only: true
