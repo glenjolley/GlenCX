@@ -7,6 +7,13 @@
     "featured": true
   },
   {
+    "title": "SerV",
+    "description": "An ASP.NET API for serving up my CV... in JSON format.",
+    "link": "https://github.com/glenjolley/SerV",
+    "image": "/images/serv.png",
+    "featured": true
+  },
+  {
     "title": "Rivermouth",
     "description": "A free streamcord.io alternative built using Blazor and .NET 8.",
     "link": "https://rivermouth.cc",
