@@ -28,7 +28,23 @@
   }
 
   h2 {
-    @apply text-3xl font-bold mb-6 text-horizon-200;
+    @apply text-3xl font-bold mb-6 text-horizon-400;
+  }
+
+  .project-card {
+    @apply shadow-xl overflow-hidden rounded-2xl bg-gradient-to-r from-horizon-700 to-horizon-800 hover:from-horizon-700 hover:to-horizon-500 transition;
+  }
+
+  .card-title {
+    @apply text-xl font-semibold mb-2 text-white;
+  }
+
+  .card-description {
+    @apply text-white mb-4 mt-0 ml-0 self-start;
+  }
+
+  .card-link {
+    @apply text-white font-medium mt-auto self-end;
   }
 }
 

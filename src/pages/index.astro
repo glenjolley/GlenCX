@@ -1,49 +1,31 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
-import ProjectCard from "../components/ProjectCard.astro"
-import projects from "../data/projects.json"
-const featuredProjects = projects.filter(project => project.featured);
+import HeroSection from "../sections/HeroSection.astro"
+import AboutSection from "../sections/AboutSection.astro"
+import ProjectSection from "../sections/ProjectSection.astro"
+import ContactSection from "../sections/ContactSection.astro"
 ---
 
 <BaseLayout title="Glen Jolley | Software Developer">
 
-<!-- Hero Section -->
-<section class="min-h-screen flex flex-col items-center justify-center relative text-center">
-<h1>Hi, I’m <span class="text-sky-400">Glen</span>.<span class="cursor-effect">|</span></h1>
-<p>
-I'm a .NET software developer from the UK, with experience in ASP.NET MVC, Blazor, APIs, SQL Server and more.
-</p>
-<!-- Down arrow -->
-<a href="#about" class="absolute bottom-6 animate-bounce text-horizon-500 hover:text-horizon-200 transition">
-<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-	<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-</svg>
-</a>
+<! -- Hero -->
+<section id="hero" class="min-h-screen flex flex-col items-center justify-center relative text-center">
+	<HeroSection />
 </section>
 
 <! -- About Section -->
 <section id="about" class="py-16">
-<div class="max-w-4xl mx-auto px-4 text-center">
-<h2>About Me</h2>
-<p>
-I'm a professional software developer from the UK with a passion for learning new technologies and building useful applications. I have experience in a variety of programming languages and frameworks, with a particular focus on .NET technologies such as ASP.NET MVC and Blazor, as well as SQL Server for database management.
-<br/><br/>In my free time, I enjoy spending time with my son, walking, vintage photography and I'm currently experimenting with 3D modeling and game development using Godot.
-</p>
-</div>
+	<AboutSection />
 </section>
 
 <!-- Projects Section -->
 <section id="projects" class="py-16 max-w-5xl mx-auto px-4">
-<h2 class="text-center">Some of my projects</h2>
-<div class="grid gap-8 md:grid-cols-2">
-{featuredProjects.map(p => <ProjectCard {...p} />)}
-</div>
+	<ProjectSection />
 </section>
-
 
 <!-- Contact Section -->
 <section id="contact" class="py-16 text-center">
-<h2>Get In Touch</h2>
-<p>TODO: Need to add a contact form here, don't want to just leave an email link.</p>
+	<ContactSection />
 </section>
+
 </BaseLayout>

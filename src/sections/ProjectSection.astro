@@ -1,0 +1,10 @@
+---
+import ProjectCard from "../components/ProjectCard.astro"
+import projects from "../data/projects.json"
+const featuredProjects = projects.filter(project => project.featured);
+---
+
+<h2 class="text-center">Some of my projects</h2>
+<div class="grid gap-8 md:grid-cols-2">
+{featuredProjects.map(p => <ProjectCard {...p} />)}
+</div>

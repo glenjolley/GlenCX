@@ -1,21 +1,21 @@
 [
   {
-    "title": "GlenCX Portfolio",
-    "description": "This site, built with Astro and Tailwind CSS.",
-    "link": "https://glen.cx",
+    "title": "This website",
+    "description": "A really simple website about me, built with Astro and Tailwind CSS.",
+    "link": "https://github.com/glenjolley/GlenCX",
     "image": "/images/portfolio.png",
     "featured": true
   },
   {
     "title": "SerV",
-    "description": "An ASP.NET API for serving up my CV... in JSON format.",
+    "description": "An experiment when bored one afternoon, this is an ASP.NET API for serving up my CV... in JSON format.",
     "link": "https://github.com/glenjolley/SerV",
     "image": "/images/serv.png",
     "featured": true
   },
   {
     "title": "Rivermouth",
-    "description": "A free streamcord.io alternative built using Blazor and .NET 8.",
+    "description": "A free service built using Blazor and .NET 8 to provide discord server owners with a way of getting notifications when Twitch streamers go live. The source code for this is only available for viewing on request as it is in the process of being rewritten before being open-sourced and made available via docker hubs.",
     "link": "https://rivermouth.cc",
     "image": "/images/rivermouth.png",
     "featured": true

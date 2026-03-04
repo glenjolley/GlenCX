@@ -1,0 +1,50 @@
+<div 
+    id="stickyHeader"
+    class="fixed top-0 left-0 w-full 
+            flex items-center justify-between
+            px-8 py-4
+            opacity-0 pointer-events-none
+            transition-all duration-300
+            z-50 bg-gradient-to-b from-black/30 via-black/10 to-transparent backdrop-blur-md">
+  
+    <!-- Left: Name -->
+    <a href="#hero">
+        <div 
+            id="stickyName"
+            class="text-xl font-bold text-horizon-400">
+        </div>
+    </a>
+
+    <!-- Right: Nav -->
+    <nav class="flex gap-8 text-m font-medium text-white">
+        <a href="#about" class="hover:text-horizon-400 transition">About</a>
+        <a href="#projects" class="hover:text-horizon-400 transition">Projects</a>
+        <a href="#contact" class="hover:text-horizon-400 transition">Contact</a>
+    </nav>
+</div>
+
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const name = document.getElementById("name");
+        const stickyHeader = document.getElementById("stickyHeader");
+        const stickyName = document.getElementById("stickyName");
+
+        if (!name || !stickyHeader || !stickyName) return;
+
+        const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (!entry.isIntersecting) {
+            stickyName.textContent = "glen.cx";
+            stickyHeader.classList.remove("opacity-0", "pointer-events-none");
+            stickyHeader.classList.add("opacity-100");
+            } else {
+            stickyHeader.classList.remove("opacity-100");
+            stickyHeader.classList.add("opacity-0", "pointer-events-none");
+            }
+        },
+        { threshold: 0 }
+        );
+
+        observer.observe(name);
+    });
+</script>
